@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 90% !important;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.logo {
+    width: 220px;
+    height: 100px;
+}
+
+    .logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+h4 {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.box {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 50px;
+    margin-top: 60px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .input input {
+        width: 75%;
+        height: 40px;
+        padding-left: 10px;
+        border: 1px solid black;
+    }
+
+    .input #gender,
+    #region,
+    #clubName,
+    #teamCategory {
+        width: 75%;
+        height: 40px;
+        padding-left: 10px;
+        border: 1px solid black;
+    }
+
+#addInputBtn {
+    width: 35%;
+    height: 40px;
+    background-color: #d9e8ff;
+    border: none;
+    border-radius: 4px;
+    color: #254f8f;
+    margin-left: 13% !important;
+}
+
+button p {
+    width: 100%;
+    margin: auto;
+}
+
+.table {
+    margin-top: 50px;
+}
+
+.direction {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+    .direction #previousPg {
+        width: 120px;
+        height: 40px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: #fff;
+        border-color: #254f8f;
+        color: #254f8f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .direction #nextPg {
+        width: 120px;
+        height: 40px;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: #254f8f;
+        border-color: #254f8f;
+        color: #fff;
+    }
+
+.table-striped tbody {
+    cursor: pointer;
+}
+
+select option:disabled {
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    #addInputBtn {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #addInputBtn {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #addInputBtn {
+        width: 75%;
+    }
+
+    .box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 50px;
+        margin-top: 60px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 50px;
+        margin-top: 60px;
+    }
+}

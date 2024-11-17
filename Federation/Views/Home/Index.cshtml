@@ -1,0 +1,25 @@
+﻿<body style="overflow:hidden">
+    <div class="left-side h-full flex flex-col items-center pt-28 pl-20">
+        <div class="mb-8 w-[120px]">
+            <img src="~/assets/images/fed-img1.jpg" alt="" />
+        </div>
+
+        <div class="h-[45%] flex flex-col justify-around items-center">
+            <a asp-controller="club" asp-action="ClubPage"><p>Klub qeydiyyatı</p></a>
+            <a asp-controller="team" asp-action="TeamPage"><p>Komanda qeydiyyatı</p></a>
+            <a><p>Heyət qeydiyyatı</p></a>
+        </div>
+    </div>
+
+    <div class="right-side h-full">
+        <div class="secondImg w-full h-full flex justify-end items-center">
+            <img class="w-full h-full relative"
+                 src="~/assets/images/fed-img2.jpeg"
+                 alt="" />
+            <img class="img2 w-[90%] h-[90%] absolute"
+                 src="~/assets/images/fed-img2.jpeg"
+                 alt="" />
+            <div class="overlay img2 w-[90%] h-[90%] absolute bg-white"></div>
+        </div>
+    </div>
+</body>

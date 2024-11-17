@@ -1,0 +1,98 @@
+﻿<div class="container">
+    <div class="logo">
+        <img src="~/assets/images/fed-img1.jpg" alt="" />
+    </div>
+
+    <h4>Komanda qeydiyyatı</h4>
+    <div class="box">
+        <div class="input"><input type="text" placeholder="Məsul şəxs" /></div>
+        <div class="input">
+            <input type="text" placeholder="Əlaqə nömrəsi" />
+        </div>
+        <div class="input"><input type="email" placeholder="Email" /></div>
+        <div class="input">
+            <select id="region" name="">
+                <option value="" disabled selected>Region</option>
+                <option value="">Bakı</option>
+                <option value="">Naxçıvan</option>
+                <option value="">Abşeron-Xızı</option>
+                <option value="">Dağlıq-Şirvan</option>
+                <option value="">Gəncə-Daşkəsən</option>
+                <option value="">Qarabağ</option>
+                <option value="">Qazax-Tovuz</option>
+                <option value="">Quba-Xaçmaz</option>
+                <option value="">Lənkəran-Astara</option>
+                <option value="">Mərkəzi Aran</option>
+                <option value="">Mil-Muğan</option>
+                <option value="">Şəki-Zaqatala</option>
+                <option value="">Şərqi Zəngəzur</option>
+                <option value="">Şirvan-Salyan</option>
+            </select>
+        </div>
+        <div class="input">
+            <select id="clubName" name="">
+                <option value="" disabled selected>Klub adı</option>
+                <option value="">Klub 1</option>
+                <option value="">Klub 2</option>
+            </select>
+        </div>
+        <div class="input">
+            <select id="teamCategory" name="\">
+                <option value="" disabled selected>Komanda kateqoriyası</option>
+                <option value="">Yenilər</option>
+                <option value="">Orta təcrübəlilər</option>
+                <option value="">Təcrübəlilər</option>
+                <option value="">Qarışıq</option>
+            </select>
+        </div>
+        <div class="input">
+            <select id="gender" name="gender">
+                <option value="" disabled selected>Cinsi</option>
+                <option value="male">Qadınlar</option>
+                <option value="female">Kişilər</option>
+            </select>
+        </div>
+        <button id="addInputBtn">
+            <p>
+                <i class="fa-regular fa-square-plus"></i>
+                <span>Əlavə et</span>
+            </p>
+        </button>
+    </div>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Klub adı</th>
+                <th scope="col">Direktor</th>
+                <th scope="col">Cinsi</th>
+                <th scope="col">Komanda kateqoriyası</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>lorem</td>
+                <td>lorem</td>
+                <td>lorem</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>lorem</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry the Bird</td>
+                <td>lorem</td>
+                <td>lorem</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="direction">
+        <a asp-controller="Home" asp-action="index" id="previousPg"><span>Geri</span></a>
+        <button id="nextPg"><span>Göndər</span></button>
+    </div>
+</div>
