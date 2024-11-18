@@ -1,0 +1,77 @@
+﻿@model club
+
+<div class="container">
+    <div class="logo">
+        <img src="~/assets/images/fed-img1.jpg" alt="" />
+    </div>
+
+    <h2>Klub qeydiyyatı</h2>
+
+    <form asp-action="Create" method="post" class="box">
+        <div class="input">
+            <input type="text" asp-for="NameOfClubCreator" name="NameOfClubCreator" placeholder="Məsul şəxs" />
+            <span asp-validation-for="NameOfClubCreator" class="text-danger"></span>
+        </div>
+        <div class="input">
+            <input type="text" asp-for="PhoneNumberOfClubCreator" name="PhoneNumberOfClubCreator" placeholder="Əlaqə nömrəsi" />
+            <span asp-validation-for="PhoneNumberOfClubCreator" class="text-danger"></span>
+        </div>
+        <div class="input">
+            <input type="email" asp-for="ClubCreatorsEmail" name="ClubCreatorsEmail" placeholder="Email" />
+            <span asp-validation-for="ClubCreatorsEmail" class="text-danger"></span>
+        </div>
+        <div class="input">
+            <input type="text" asp-for="Region" name="Region" placeholder="Region" />
+            <span asp-validation-for="Region" class="text-danger"></span>
+        </div>
+        <div class="input">
+            <input type="text" asp-for="ClubName" name="ClubName" placeholder="Klub adı" />
+            <span asp-validation-for="ClubName" class="text-danger"></span>
+        </div>
+        <div class="input">
+            <input type="text" asp-for="Director" name="Director" placeholder="Direktor" />
+            <span asp-validation-for="Director" class="text-danger"></span>
+        </div>
+        <div class="input">
+            <input type="email" asp-for="DirectorsEmail" name="DirectorsEmail" placeholder="Email" />
+            <span asp-validation-for="DirectorsEmail" class="text-danger"></span>
+        </div>
+        <div class="input">
+            <input type="text" asp-for="Vöen" name="Vöen" placeholder="Vöen" />
+            <span asp-validation-for="Vöen" class="text-danger"></span>
+        </div>
+        <div class="input">
+            <select asp-for="HallName" id="hall" name="HallName">
+                <option value="" disabled selected>Məşq zalları</option>
+                <option value="Zal1">Zal №1</option>
+                <option value="Zal2">Zal №2</option>
+            </select>
+        </div>
+        <div class="input">
+            <select asp-for="TeamCategory" id="teamCategory" name="TeamCategory">
+                <option value="" disabled selected>Komanda kateqoriyası</option>
+                <option value="Yenilər">Yenilər</option>
+                <option value="Orta təcrübəlilər">Orta təcrübəlilər</option>
+                <option value="Təcrübəlilər">Təcrübəlilər</option>
+                <option value="Qarışıq">Qarışıq</option>
+            </select>
+        </div>
+        <div class="input">
+            <select asp-for="Gender" id="gender" name="gender">
+                <option value="" disabled selected>Cinsi</option>
+                <option value="Qadınlar">Qadınlar</option>
+                <option value="Kişilər">Kişilər</option>
+            </select>
+        </div>
+        <button type="button" id="addInputBtn">
+            <p>
+                <i class="fa-regular fa-square-plus"></i>
+                <span>Əlavə et</span>
+            </p>
+        </button>
+        <div class="direction">
+            <a asp-controller="club" asp-action="ClubPage" id="previousPg"><span>Geri</span></a>
+            <button type="submit" id="nextPg"><span>Göndər</span></button>
+        </div>
+    </form>
+</div>

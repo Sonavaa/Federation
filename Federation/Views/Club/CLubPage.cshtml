@@ -1,54 +1,26 @@
-﻿<div class="container">
+﻿@using Federation.ViewModels
+@model PaginationVM
+
+@{
+    int count = (Model.CurrentPage - 1) * Model.PageSize;
+}
+
+<div class="container">
     <div class="logo">
         <img src="~/assets/images/fed-img1.jpg" alt="" />
     </div>
 
     <h2>Klub qeydiyyatı</h2>
-    <div class="box">
-        <div class="input"><input type="text" placeholder="Məsul şəxs" /></div>
-        <div class="input">
-            <input type="text" placeholder="Əlaqə nömrəsi" />
-        </div>
-        <div class="input"><input type="email" placeholder="Email" /></div>
-        <div class="input"><input type="text" placeholder="Region" /></div>
-        <div class="input"><input type="text" placeholder="Klub adı" /></div>
-        <div class="input"><input type="text" placeholder="Direktor" /></div>
-        <div class="input"><input type="email" placeholder="Email" /></div>
-        <div class="input"><input type="text" placeholder="Vöen" /></div>
-        <div class="input">
-            <select id="hall" name="">
-                <option value="" disabled selected>Məşq zalları</option>
-                <option value="">Zal №1</option>
-                <option value="">Zal №2</option>
-            </select>
-        </div>
-        <div class="input">
-            <select id="teamCategory" name="\">
-                <option value="" disabled selected>Komanda kateqoriyası</option>
-                <option value="">Yenilər</option>
-                <option value="">Orta təcrübəlilər</option>
-                <option value="">Təcrübəlilər</option>
-                <option value="">Qarışıq</option>
-            </select>
-        </div>
-        <div class="input">
-            <select id="gender" name="gender">
-                <option value="" disabled selected>Cinsi</option>
-                <option value="male">Qadınlar</option>
-                <option value="female">Kişilər</option>
-            </select>
-        </div>
-        <button id="addInputBtn">
-            <p>
-                <i class="fa-regular fa-square-plus"></i>
-                <span>Əlavə et</span>
-            </p>
-        </button>
-    </div>
+
+    <form asp-action="Create" method="post" class="navigation">
+        <a asp-controller="Home" asp-action="index" id="mainPg"><span>Əsas səhifəyə geri qayıt</span></a>
+        <a asp-controller="club" asp-action="Create" id="newPg"><span>Yeni Klub Yarat</span></a>
+    </form>
 
     <table class="table table-striped table-hover">
         <thead>
             <tr>
+                <th scope="col">№</th>
                 <th scope="col">Klub adı</th>
                 <th scope="col">Direktor</th>
                 <th scope="col">Cinsi</th>
@@ -56,29 +28,43 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>lorem</td>
-                <td>lorem</td>
-                <td>lorem</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>lorem</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry the Bird</td>
-                <td>lorem</td>
-                <td>lorem</td>
-            </tr>
+            @foreach (var club in Model.Clubs)
+            {
+                count++;
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@club.ClubName</td>
+                    <td>@club.Director</td>
+                    <td>@club.Gender</td>
+                    <td>@club.TeamCategory</td>
+                    <td>
+                        <form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this club?');">
+                            <a style="margin-right:10px;" id="updateBtn">Update</a>
+                            <input type="hidden" name="id" value="@club.Id" />
+                            <button type="submit" id="deleteBtn">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 
-    <div class="direction">
-        <a asp-controller="Home" asp-action="index" id="previousPg"><span>Geri</span></a>
-        <button id="nextPg"><span>Göndər</span></button>
+    <div class="pagination">
+        @if (Model.CurrentPage > 1)
+        {
+            <a href="@Url.Action("ClubPage", new { pageNumber = Model.CurrentPage - 1 })"><i class="fa-solid fa-angle-left"></i></a>
+        }
+
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("ClubPage", new { pageNumber = i })" class="@(Model.CurrentPage == i ? "active" : "")">@i</a>
+        }
+
+        @if (Model.CurrentPage < Model.TotalPages)
+        {
+            <a href="@Url.Action("ClubPage", new { pageNumber = Model.CurrentPage + 1 })"><i class="fa-solid fa-angle-right"></i></a>
+        }
     </div>
 </div>
