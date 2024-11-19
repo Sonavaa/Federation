@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Federation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5ac21de4d8313caebbe5f1aadb8b10c3d0fbd28")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8a25c28480a04cdfb3097ae56ef745686e7bc1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Federation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Federation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

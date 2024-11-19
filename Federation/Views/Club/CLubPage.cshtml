@@ -39,7 +39,7 @@
                     <td>@club.TeamCategory</td>
                     <td>
                         <form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this club?');">
-                            <a style="margin-right:10px;" id="updateBtn">Update</a>
+                            <a asp-controller="club" asp-action="Update" asp-route-id="@club.Id" style="margin-right:10px;" id="updateBtn">Update</a>
                             <input type="hidden" name="id" value="@club.Id" />
                             <button type="submit" id="deleteBtn">
                                 Delete
