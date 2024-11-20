@@ -46,11 +46,7 @@ namespace FederationTask.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var clubs = _context.Clubs
-            .Where(c => !c.isDeleted)
-            .ToList();
-
-            ViewBag.Clubs = clubs;
+            ViewBag.Clubs = await _context.Clubs.Where(c => !c.isDeleted).ToListAsync();
             return View();
         }
 
@@ -178,5 +174,6 @@ namespace FederationTask.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(TeamPage));
         }
+
     }
 }

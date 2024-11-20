@@ -13,6 +13,9 @@
     width: 220px;
     height: 100px;
 }
+    .logo a {
+        border: 1px solid #fff !important;
+    }
 
     .logo img {
         width: 100%;

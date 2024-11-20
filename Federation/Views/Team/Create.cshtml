@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="logo">
-        <img src="~/assets/images/fed-img1.jpg" alt="" />
+        <a asp-controller="home" asp-action="index"><img src="~/assets/images/fed-img1.jpg" alt="" /></a>
     </div>
 
     <p id="notfication">Komanda qeydiyyatı</p>
@@ -41,7 +41,7 @@
             <span asp-validation-for="Region" class="text-danger"></span>
         </div>
         <div class="input">
-                <select asp-for="ClubId" asp-items="@(new SelectList(ViewBag.Clubs, nameof(club.Id), nameof(club.ClubName)))">
+            <select asp-for="ClubId" asp-items="@(new SelectList(ViewBag.Clubs, nameof(club.Id), nameof(club.ClubName)))">
                     <option selected>Klub</option>
                 </select>
             <span asp-validation-for="TeamCategory" class="text-danger"></span>
