@@ -20,9 +20,11 @@
         height: 100%;
     }
 
-h2 {
-    margin-left: 40px;
-    margin-top: 40px;
+#notfication {
+    font-size: 2 rem !important;
+    font-weight: bold !important;
+    margin-left: 40px !important;
+    margin-top: 40px !important;
 }
 
 .box {
@@ -48,11 +50,13 @@ h2 {
     }
 
     .input #gender,
-    #teamCategory, #hall {
+    #teamCategory, #HallName {
+        border: 1px solid #000;
         width: 75%;
         height: 40px;
         padding-left: 10px;
     }
+
 
 #addInputBtn {
     width: 35%;

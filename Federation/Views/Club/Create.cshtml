@@ -5,7 +5,7 @@
         <img src="~/assets/images/fed-img1.jpg" alt="" />
     </div>
 
-    <h2>Klub qeydiyyatı</h2>
+    <p id="notfication">Klub qeydiyyatı</p>
 
     <form asp-action="Create" method="post" class="box">
         <div class="input">
@@ -57,7 +57,7 @@
             <span asp-validation-for="Vöen" class="text-danger"></span>
         </div>
         <div class="input">
-            <select asp-for="HallName" id="hall" name="HallName">
+            <select asp-for="HallName" id="HallName" name="HallName">
                 <option value="" disabled selected>Məşq zalları</option>
                 <option value="Zal1">Zal №1</option>
                 <option value="Zal2">Zal №2</option>

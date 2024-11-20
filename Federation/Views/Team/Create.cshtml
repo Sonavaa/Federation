@@ -1,22 +1,24 @@
-﻿@model club
+﻿@model team
 
 <div class="container">
     <div class="logo">
         <img src="~/assets/images/fed-img1.jpg" alt="" />
     </div>
 
-    <form asp-action="Update" method="post" class="box">
+    <p id="notfication">Komanda qeydiyyatı</p>
+
+    <form asp-action="Create" method="post" class="box">
         <div class="input">
-            <input type="text" asp-for="NameOfClubCreator" name="NameOfClubCreator" placeholder="Məsul şəxs" />
-            <span asp-validation-for="NameOfClubCreator" class="text-danger"></span>
+            <input type="text" asp-for="Name" name="Name" placeholder="Məsul şəxs" />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="input">
-            <input type="text" asp-for="PhoneNumberOfClubCreator" name="PhoneNumberOfClubCreator" placeholder="Əlaqə nömrəsi" />
-            <span asp-validation-for="PhoneNumberOfClubCreator" class="text-danger"></span>
+            <input type="text" asp-for="PhoneNumber" name="PhoneNumber" placeholder="Əlaqə nömrəsi" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
         <div class="input">
-            <input type="email" asp-for="ClubCreatorsEmail" name="ClubCreatorsEmail" placeholder="Email" />
-            <span asp-validation-for="ClubCreatorsEmail" class="text-danger"></span>
+            <input type="email" asp-for="Email" name="Email" placeholder="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="input">
             <select asp-for="Region" id="region" name="Region">
@@ -39,44 +41,25 @@
             <span asp-validation-for="Region" class="text-danger"></span>
         </div>
         <div class="input">
-            <input type="text" asp-for="ClubName" name="ClubName" placeholder="Klub adı" />
-            <span asp-validation-for="ClubName" class="text-danger"></span>
-        </div>
-        <div class="input">
-            <input type="text" asp-for="Director" name="Director" placeholder="Direktor" />
-            <span asp-validation-for="Director" class="text-danger"></span>
-        </div>
-        <div class="input">
-            <input type="email" asp-for="DirectorsEmail" name="DirectorsEmail" placeholder="Email" />
-            <span asp-validation-for="DirectorsEmail" class="text-danger"></span>
-        </div>
-        <div class="input">
-            <input type="text" asp-for="Vöen" name="Vöen" placeholder="Vöen" />
-            <span asp-validation-for="Vöen" class="text-danger"></span>
-        </div>
-        <div class="input">
-            <select asp-for="HallName" id="hall" name="HallName">
-                <option value="" disabled selected>Məşq zalları</option>
-                <option value="Zal1">Zal №1</option>
-                <option value="Zal2">Zal №2</option>
-            </select>
-            <span asp-validation-for="HallName" class="text-danger"></span>
+                <select asp-for="ClubId" asp-items="@(new SelectList(ViewBag.Clubs, nameof(club.Id), nameof(club.ClubName)))">
+                    <option selected>Klub</option>
+                </select>
+            <span asp-validation-for="TeamCategory" class="text-danger"></span>
         </div>
         <div class="input">
             <select asp-for="TeamCategory" id="teamCategory" name="TeamCategory">
                 <option value="" disabled selected>Komanda kateqoriyası</option>
-                <option value="Yenilər">Yenilər</option>
-                <option value="Orta təcrübəlilər">Orta təcrübəlilər</option>
-                <option value="Təcrübəlilər">Təcrübəlilər</option>
-                <option value="Qarışıq">Qarışıq</option>
+                <option value="Yeni">Yeni</option>
+                <option value="Orta təcrübəli">Orta təcrübəli</option>
+                <option value="Təcrübəli">Təcrübəli</option>
             </select>
             <span asp-validation-for="TeamCategory" class="text-danger"></span>
         </div>
         <div class="input">
             <select asp-for="Gender" id="gender" name="gender">
                 <option value="" disabled selected>Cinsi</option>
-                <option value="Qadınlar">Qadınlar</option>
-                <option value="Kişilər">Kişilər</option>
+                <option value="Qadın">Qadın</option>
+                <option value="Kişi">Kişi</option>
             </select>
             <span asp-validation-for="Gender" class="text-danger"></span>
         </div>
@@ -87,7 +70,7 @@
             </p>
         </button>
         <div class="direction">
-            <a asp-controller="club" asp-action="ClubPage" id="previousPg"><span>Geri</span></a>
+            <a asp-controller="team" asp-action="TeamPage" id="previousPg"><span>Geri</span></a>
             <button type="submit" id="nextPg"><span>Göndər</span></button>
         </div>
     </form>

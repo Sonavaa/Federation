@@ -19,9 +19,11 @@
         height: 100%;
     }
 
-h4 {
-    margin-left: 40px;
-    margin-top: 40px;
+#notfication {
+    font-size: 2 rem !important;
+    font-weight: bold !important;
+    margin-left: 40px !important;
+    margin-top: 40px !important;
 }
 
 .box {
@@ -68,6 +70,13 @@ h4 {
 button p {
     width: 100%;
     margin: auto;
+}
+
+#ClubId {
+    border: 1px solid #000;
+    width: 75%;
+    height: 40px;
+    padding-left: 10px;
 }
 
 .table {

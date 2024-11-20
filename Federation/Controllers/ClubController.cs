@@ -39,6 +39,7 @@ namespace FederationTask.Controllers
 
             return View(pagination);
         }
+
         [HttpGet]
         public IActionResult Create()
         {
@@ -112,6 +113,7 @@ namespace FederationTask.Controllers
 
         }
 
+        [HttpGet]
         public async Task<IActionResult> Update(int id)
         {
             if (id == null || id == 0)
@@ -128,6 +130,7 @@ namespace FederationTask.Controllers
 
             return View(club);
         }
+
         [HttpPost]
         public async Task<IActionResult> Update(int id, club club)
         {
